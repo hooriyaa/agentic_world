@@ -55,7 +55,10 @@ const Analysis = () => {
   };
 
   return (
-    <section id="analysis" className="relative py-20  w-full min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 md:px-10 text-center overflow-hidden">
+    <section
+      id="analysis"
+      className="relative py-20  w-full min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 md:px-10 text-center overflow-hidden"
+    >
       {/* Particle Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(40)].map((_, i) => (

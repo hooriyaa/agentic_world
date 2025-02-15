@@ -4,10 +4,12 @@ import { motion } from "framer-motion";
 import { Bot, Send, X, Rocket, BrainCircuit } from "lucide-react";
 import { generateBotReply } from "./ChatbotQuestions";
 
-
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { text: "🤖 Welcome to Agentic World! Ask me anything about AI, technology, or Hooriya M. Fareed.", sender: "bot" },
+    {
+      text: "🤖 Welcome to Agentic World! Ask me anything about AI, technology, or Hooriya M. Fareed.",
+      sender: "bot",
+    },
   ]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +59,9 @@ export default function Chatbot() {
                 animate={{ opacity: 1, y: 0 }}
               >
                 {msg.sender === "bot" && <BrainCircuit size={20} />}
-                {msg.sender === "user" && <Rocket size={18} className="text-pink-400" />}
+                {msg.sender === "user" && (
+                  <Rocket size={18} className="text-pink-400" />
+                )}
                 {msg.text}
               </motion.div>
             ))}
@@ -73,7 +77,10 @@ export default function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
             />
-            <button className="bg-purple-500 p-2 rounded-lg hover:bg-purple-600" onClick={handleSend}>
+            <button
+              className="bg-purple-500 p-2 rounded-lg hover:bg-purple-600"
+              onClick={handleSend}
+            >
               <Send size={20} className="text-white" />
             </button>
           </div>

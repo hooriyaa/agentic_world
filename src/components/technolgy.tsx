@@ -37,15 +37,9 @@ const technologies = [
 ];
 
 const Technologies = () => {
-  const [rotations, setRotations] = useState(technologies.map(() => 0));
-
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-
-  const handleRotate = (index: number) => {
-    setRotations((prev) => prev.map((r, i) => (i === index ? r + 360 : r)));
-  };
 
   return (
     <section
@@ -99,8 +93,8 @@ const Technologies = () => {
             >
               <motion.div
                 className="w-16 h-16 flex items-center justify-center cursor-pointer"
-                whileHover={{ rotate: 20, scale: 1.2 }} transition={{ duration: 0.3 }}
-                onClick={() => handleRotate(index)}
+                whileHover={{ rotate: 20, scale: 1.2 }}
+                transition={{ duration: 0.3 }}
               >
                 <IconComponent
                   className={`${tech.color} w-12 h-12 sm:w-14 sm:h-14`}

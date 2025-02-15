@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp, Bot, Sparkles, Brain, ShieldCheck } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Bot,
+  Sparkles,
+  Brain,
+  ShieldCheck,
+} from "lucide-react";
 
 const faqs = [
   {
@@ -52,22 +59,22 @@ export default function QuestionsSection() {
 
   return (
     <section className="py-16 px-6 md:px-16 bg-black text-white">
-     <div className="max-w-3xl mx-auto text-center">
-  <motion.h2
-    className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-pink-500 inline-block text-transparent bg-clip-text drop-shadow-lg mb-6"
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-     Frequently Asked Questions
-  </motion.h2>
-  <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-  Get answers to common questions about  <span className="text-pink-400 font-semibold">Agentic AI</span>
-  </p>
-</div>
+      <div className="max-w-3xl mx-auto text-center">
+        <motion.h2
+          className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-400 to-pink-500 inline-block text-transparent bg-clip-text drop-shadow-lg mb-6"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Get answers to common questions about{" "}
+          <span className="text-pink-400 font-semibold">Agentic AI</span>
+        </p>
+      </div>
 
-
-      <div className="max-w-3xl mx-auto mt-8 space-y-4" >
+      <div className="max-w-3xl mx-auto mt-8 space-y-4">
         {faqs.map((faq, index) => (
           <motion.div
             key={index}
