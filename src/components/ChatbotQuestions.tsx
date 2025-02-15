@@ -26,6 +26,10 @@ export const generateBotReply = (message: string): string => {
     return "🌍 This website was created by **Hooriya M. Fareed**, a frontend developer passionate about AI!";
   if (/hooriya m. fareed/i.test(lowerMsg))
     return "👩‍💻 Hooriya M. Fareed is the creator of **Agentic World**, specializing in AI-driven applications.";
+  if (/hooriya(\s*m\.?\s*fareed)?/i.test(lowerMsg)) {  
+    return "👩‍💻 **Hooriya M. Fareed** is a **frontend developer** passionate about **AI**, specializing in creating AI-driven applications. She is also the creator of **Agentic World**. 🚀";  
+}
+
 
   if (/what is agentic ai/i.test(lowerMsg))
     return "🤖 **Agentic AI** is an AI-driven system that enables automation, learning, and intelligent decision-making.";
