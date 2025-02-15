@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaRobot, FaBrain, FaRocket } from "react-icons/fa";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function HeroSection() {
   const aiMessages = [
@@ -63,9 +64,9 @@ export default function HeroSection() {
         <FaBrain className="text-purple-400" /> The Future of Modern AI Agents
       </motion.p>
 
-      {/* AI Assistant Box */}
+      {/* AI Assistant Box with Typewriter Effect */}
       <motion.div
-        className="relative mt-8 p-4 sm:p-6 md:p-8 bg-white/10 backdrop-blur-lg rounded-xl shadow-lg border border-white/20 flex items-center gap-3 sm:gap-4 max-w-xs sm:max-w-md md:max-w-lg"
+        className="relative mt-8 p-4 sm:p-6 md:p-8 bg-white/10 backdrop-blur-lg rounded-xl shadow-lg border border-white/20 flex items-center gap-3 sm:gap-4 w-full max-w-md"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
@@ -75,14 +76,16 @@ export default function HeroSection() {
         }}
       >
         <FaRobot className="text-2xl sm:text-3xl md:text-4xl text-pink-500 animate-pulse" />
-        <p className="text-sm sm:text-base md:text-lg text-white">
-          <motion.span
-            key={aiMessages[0]}
-            animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -10] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-          >
-            {aiMessages[Math.floor(Math.random() * aiMessages.length)]}
-          </motion.span>
+        <p className="text-sm sm:text-base md:text-lg text-white min-h-[50px] pt-3">
+          <Typewriter
+            words={aiMessages}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={50}
+            deleteSpeed={30}
+            delaySpeed={1500}
+          />
         </p>
       </motion.div>
 
@@ -104,7 +107,7 @@ export default function HeroSection() {
           animate={{ y: [0, -2, 0, 2, 0], rotate: [0, 2, -2, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         >
-         Explore AI Agents
+          Explore AI Agents
         </motion.span>
       </motion.a>
     </section>
