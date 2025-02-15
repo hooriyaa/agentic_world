@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Bot, Send, X, Rocket, BrainCircuit } from "lucide-react";
+import { generateBotReply } from "./ChatbotQuestions";
+
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -9,36 +11,6 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
-  const generateBotReply = (message: string) => {
-    const lowerMsg = message.toLowerCase();
-
-    // Special greeting response
-    if (lowerMsg.includes("hello") || lowerMsg.includes("hi")) return "👋 Hello, amazing human! Welcome to Agentic AI. How can I assist you today? 🚀";
-
-    // Questions about website sections
-    if (lowerMsg.includes("hero")) return "🚀 The Hero Section introduces Agentic AI mission to revolutionize AI-driven solutions.";
-    if (lowerMsg.includes("explore")) return "🔍 Explore section lets you dive deep into AI models and real-world use cases.";
-    if (lowerMsg.includes("technology")) return "🛠️ The Technology page explains the cutting-edge AI frameworks and innovations powering Agentic AI.";
-    if (lowerMsg.includes("pricing")) return "💰 The Pricing page offers flexible plans for businesses and individuals who want to integrate AI.";
-    if (lowerMsg.includes("contact")) return "📞 Need to talk to us? Visit our Contact page for inquiries and support.";
-
-    // About Hooriya M. Fareed
-    if (lowerMsg.includes("who made this") || lowerMsg.includes("creator")) return "🌍 This website was designed and developed by **Hooriya M. Fareed**, a skilled frontend developer passionate about AI and cutting-edge technology!";
-    if (lowerMsg.includes("hooriya m. fareed")) return "👩‍💻 Hooriya M. Fareed is a frontend developer, AI enthusiast, and creator of **Agentic World**! She specializes in building futuristic, AI-powered applications.";
-    
-    // AI and Agentic AI-specific answers
-    if (lowerMsg.includes("what is agentic ai")) return "🤖 **Agentic AI** is an advanced AI-driven system that offers automation, machine learning insights, and AI-powered assistance for various industries.";
-    if (lowerMsg.includes("how does agentic ai work")) return "⚙️ **Agentic AI** leverages deep learning, neural networks, and automation tools to process information and provide intelligent solutions.";
-    if (lowerMsg.includes("what can agentic ai do")) return "🚀 **Agentic AI** can analyze data, automate tasks, provide AI-powered chatbots, recommend solutions, and much more!";
-    
-    // General AI questions
-    if (lowerMsg.includes("what is ai")) return "🧠 AI (**Artificial Intelligence**) is the simulation of human intelligence in machines, enabling them to learn, reason, and make decisions.";
-    if (lowerMsg.includes("how does ai work")) return "⚡ AI works using **machine learning, neural networks, and deep learning** to recognize patterns, analyze data, and make predictions.";
-    if (lowerMsg.includes("future of ai")) return "🚀 The future of AI includes **self-learning systems, automation, AI-powered assistants, and innovations in robotics, healthcare, and space exploration!**";
-    
-    return "🤖 Agentic AI is always evolving! Ask me anything about AI, Hooriya M. Fareed, or this website.";
-  };
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -54,7 +26,7 @@ export default function Chatbot() {
 
   return (
     <div className="fixed bottom-8 right-8 z-50">
-      {/* Rotating Chatbot Button */}
+      {/* Chatbot Toggle Button */}
       <motion.button
         className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition relative"
         animate={{ rotate: 360 }}
