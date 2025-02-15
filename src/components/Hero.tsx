@@ -12,7 +12,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative w-full sm:pt-36 pb-28 pt-36 sm:min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 md:px-8 text-center overflow-hidden">
+    <section className="relative w-full sm:pt-40 pb-11 pt-36 flex flex-col items-center justify-center bg-black text-white px-4 md:px-8 text-center overflow-hidden">
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 animate-gradient "></div>
 

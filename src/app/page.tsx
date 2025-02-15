@@ -11,7 +11,7 @@ const Analysis = dynamic(() => import("@/components/analysis"), { ssr: false });
 
 const Page = () => {
   return (
-    <div>
+    <div className="mx-auto max-w-7xl">
       <HeroSection />
       <Explore />
       <Technolgy />

@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-24 py-16 overflow-hidden">
+    <section id="contact" className="relative w-full flex flex-col items-center justify-center bg-black text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-24 py-16 overflow-hidden">
       {/* Glowing Background Effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-black to-pink-900 opacity-30 blur-3xl"></div>
 

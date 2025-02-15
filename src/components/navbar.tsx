@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bot, Cpu, BarChart, DollarSign, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +15,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50">
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+    <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md shadow-lg z-50 md:px-20">
+      <div className="container mx-auto flex justify-center items-center px-6 py-4">
         
         {/* Logo with Animated Robot Icon */}
         <motion.div 
@@ -27,11 +28,13 @@ export default function Navbar() {
           <motion.div whileHover={{ rotate: 20, scale: 1.2 }} transition={{ duration: 0.3 }}>
             <Bot size={28} className="text-purple-400" />
           </motion.div>
-          <span className="text-purple-400">Agentia</span> World
+          <Link href="/" className="flex items-center gap-1">
+            <span className="text-purple-400">Agentic</span> World
+          </Link>
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex justify-center space-x-8 ml-8">
           {menuItems.map((item, index) => (
             <motion.a 
               key={index} 
@@ -48,7 +51,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <motion.a 
           href="#discover"
-          className="hidden md:flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:shadow-xl transition-all"
+          className="hidden md:flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:shadow-xl transition-all ml-8"
           whileHover={{ scale: 1.1 }}
         >
           <Bot size={22} />
@@ -56,7 +59,7 @@ export default function Navbar() {
         </motion.a>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white ml-auto">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -95,4 +98,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

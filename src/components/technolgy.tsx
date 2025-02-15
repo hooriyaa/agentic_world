@@ -44,7 +44,7 @@ const Technologies = () => {
   return (
     <section
       id="technology"
-      className="relative w-full sm:pt-36 pb-28 pt-36 sm:min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 md:px-8 text-center overflow-hidden"
+      className="relative w-full sm:pt-36 pb-28 pt-36 flex flex-col items-center justify-center bg-black text-white px-4 md:px-8 text-center overflow-hidden"
     >
       {/* Animated Background */}
       <div className="absolute inset-0 animate-gradient"></div>
