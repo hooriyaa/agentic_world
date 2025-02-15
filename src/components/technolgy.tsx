@@ -99,7 +99,9 @@ const Technologies = () => {
             >
               <motion.div
                 className="w-16 h-16 flex items-center justify-center cursor-pointer"
-                whileHover={{ rotate: 20, scale: 1.2 }} transition={{ duration: 0.3 }}
+                whileHover={{ rotate: 20, scale: 1.2 }}
+                transition={{ duration: 0.3 }}
+                animate={{ rotate: rotations[index] }} 
                 onClick={() => handleRotate(index)}
               >
                 <IconComponent
